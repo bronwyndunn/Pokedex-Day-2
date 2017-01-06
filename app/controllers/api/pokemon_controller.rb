@@ -12,6 +12,7 @@ class Api::PokemonController < ApplicationController
   def create
     @pokemon = Pokemon.new(poke_params)
     if @pokemon.save
+      debugger;
       render :show
     else
       render json: @pokemon.errors.full_messages, status: 422
